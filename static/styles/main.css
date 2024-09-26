@@ -1,0 +1,146 @@
+body {
+    font-family: Arial, sans-serif; /* Define a fonte como Arial, se não tiver, usa uma sans-serif */
+    text-align: center; /* Centraliza o texto na página */
+    background-color: #e0f7fa; /* Cor de fundo clara, inspirado no azul aqua */
+}
+
+h1 {
+    margin-bottom: 20px; /* Espaço abaixo do título principal */
+    color: #00796b; /* Cor do texto em verde */
+}
+
+#menu {
+    display: flex; /* Usa flexbox pra organizar os elementos dentro */
+    flex-direction: column; /* Coloca os itens em coluna */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    background-color: #ffffff; /* Fundo branco pro menu */
+    border-radius: 10px; /* Borda arredondada */
+    padding: 20px; /* Espaçamento interno */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra leve pra dar destaque */
+}
+
+h2 {
+    color: #00796b; /* Cor do texto em verde */
+}
+
+button {
+    padding: 10px 20px; /* Mais espaço nos botões, fica mais bonito */
+    font-size: 1rem; /* Tamanho da fonte dos botões */
+    margin: 10px; /* Espaço ao redor dos botões */
+    cursor: pointer; /* Mostra o cursor como ponteiro quando em cima do botão */
+    border: none; /* Remove a borda padrão dos botões */
+    border-radius: 5px; /* Borda arredondada pros botões */
+    background-color: #00bcd4; /* Cor de fundo do botão em aqua */
+    color: white; /* Cor do texto do botão em branco */
+    transition: background-color 0.3s; /* Transição suave quando muda a cor do fundo */
+}
+
+button:hover {
+    background-color: #008c9e; /* Muda a cor do botão quando passa o mouse */
+}
+
+#difficulty-selection {
+    margin-top: 20px; /* Espaço acima da seleção de dificuldade */
+    padding: 0; /* Remove o espaço interno */
+    text-align: center; /* Centraliza o texto dentro da seleção */
+}
+
+#difficulty-selection h3 {
+    color: #00796b; /* Cor do título em verde */
+    margin-bottom: 10px; /* Espaçamento abaixo do título */
+}
+
+select {
+    padding: 10px; /* Espaçamento interno pro seletor */
+    font-size: 1rem; /* Tamanho da fonte do seletor */
+    border: 1px solid #00bcd4; /* Borda em aqua pro seletor */
+    border-radius: 5px; /* Bordas arredondadas pro seletor */
+    background-color: #f0f0f0; /* Fundo claro pro seletor */
+    color: #00796b; /* Cor do texto no seletor */
+    transition: border-color 0.3s; /* Transição suave na borda ao focar */
+}
+
+select:focus {
+    border-color: #008c9e; /* Muda a cor da borda ao focar */
+    outline: none; /* Remove a borda de foco padrão do navegador */
+}
+
+#status {
+    margin-top: 20px; /* Espaço acima do status do jogo */
+    font-weight: bold; /* Deixa o texto do status em negrito */
+    color: #00796b; /* Cor do texto do status em verde */
+}
+
+.cell {
+    width: 100px; /* Largura das células do jogo */
+    height: 100px; /* Altura das células do jogo */
+    background-color: #f0f0f0; /* Fundo claro pras células */
+    font-size: 4rem; /* Aumentado pra dar mais destaque pro "X" e "O" */
+    display: flex; /* Usa flexbox dentro da célula */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    cursor: pointer; /* Mostra o cursor como ponteiro quando em cima da célula */
+    border: 1px solid #ccc; /* Borda cinza clara pras células */
+    transition: background-color 0.3s; /* Transição suave quando passa o mouse */
+}
+
+.cell.X {
+    color: #00bcd4; /* Verde aqua*/
+}
+
+.cell.O {
+    color: #ff69b4; /* Rosa suave*/
+}
+
+.cell:hover {
+    background-color: #e0e0e0; /* Escurece a célula ao passar o mouse */
+}
+
+/* Estilo pro controle deslizante (slider) */
+.switch {
+    position: relative; /* Posiciona o controle deslizante relativo ao seu contêiner */
+    display: inline-block; /* Mostra o slider inline */
+    width: 60px; /* Largura do slider */
+    height: 34px; /* Altura do slider */
+    margin-top: 10px; /* Espaço acima do slider */
+}
+
+.switch input {
+    opacity: 0; /* Esconde o checkbox original */
+    width: 0; /* Remove a largura do checkbox */
+    height: 0; /* Remove a altura do checkbox */
+}
+
+.slider {
+    position: absolute; /* Posiciona a bolinha dentro do slider */
+    cursor: pointer; /* Mostra o cursor como ponteiro */
+    top: 0; /* Alinha em cima */
+    left: 0; /* Alinha à esquerda */
+    right: 0; /* Alinha à direita */
+    bottom: 0; /* Alinha embaixo */
+    background-color: #ccc; /* Cor de fundo padrão do slider */
+    transition: .4s; /* Transição suave ao mudar o estado */
+    border-radius: 34px; /* Borda arredondada pro slider */
+}
+
+.slider:before {
+    position: absolute; /* Posiciona a bolinha */
+    content: ""; /* Necessário pra criar o elemento */
+    height: 26px; /* Altura da bolinha */
+    width: 26px; /* Largura da bolinha */
+    left: 4px; /* Espaçamento à esquerda da bolinha */
+    bottom: 4px; /* Espaçamento inferior da bolinha */
+    background-color: white; /* Cor da bolinha */
+    border-radius: 50%; /* Bolinha arredondada */
+    transition: .4s; /* Transição suave ao mover a bolinha */
+}
+
+/* Estilo quando o slider tá ativado */
+input:checked + .slider {
+    background-color: #00bcd4; /* Cor de fundo do slider quando ativado */
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px); /* Move a bolinha pra direita quando ativado */
+}
