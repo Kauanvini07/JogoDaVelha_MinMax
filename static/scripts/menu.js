@@ -17,7 +17,7 @@ function startGame(mode, selectedDifficulty) {
     } else {
         document.getElementById('status').style.display = 'block'; // Mostra o status pra computador vs humano
         const script = document.createElement('script'); // Cria um novo script
-        script.src = '../static/scripts/minimax.js'; // Define o caminho do minimax
+        script.src = '/JogoDaVelha_MinMax/static/scripts/minimax.js'; // Define o caminho do minimax
         document.body.appendChild(script); // Adiciona o script ao corpo do documento
     }
     resetGame(); // Reinicia o jogo
